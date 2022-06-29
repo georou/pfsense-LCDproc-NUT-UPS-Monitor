@@ -1279,21 +1279,16 @@ function loop_status($lcd) {
 							}
 						} else {
 							$runtime = ($ups_status['_hms'] == null) ? "VOLTS: {$ups_status['battery.voltage']}/{$ups_status['battery.voltage.low']}" : "HMS: {$ups_status['_hms']}";
-							$ups_name = explode("@", ($ups_status['_name']));
 							switch($lcdpanel_height) {
 								case 1:
-									//$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']} RT:{$ups_status['_hms']} BATT:{$ups_status['battery.charge']}% LOAD:{$ups_status['ups.load']}%\"";
-									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_name[0]} {$ups_status['_summary']} {$runtime} BATT:{$ups_status['battery.charge']}% LOAD:{$ups_status['ups.load']}%\"";
+									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']} {$runtime} BATT:{$ups_status['battery.charge']}% LOAD:{$ups_status['ups.load']}%\"";
 									break;
 								case 2:
-									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_name[0]} {$ups_status['_summary']}\"";
+									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']}\"";
 									$lcd_cmds[] = "widget_set $name runtime_wdgt 1 2 $lcdpanel_width 2 h 3 \"{$runtime} BATT:{$ups_status['battery.charge']}% LOAD:{$ups_status['ups.load']}%\"";
 									break;
 								case 4:
-									//$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"" . (explode("@", ($ups_status['_name']))) . $ups_status['_summary'] . "\"";
-									//$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']}\"";
-									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_name[0]} {$ups_status['_summary']}\"";
-									//$lcd_cmds[] = "widget_set $name runtime_wdgt 1 2 $lcdpanel_width 2 h 3 \"RUN: {$ups_status['_hms']}\"";
+									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']}\"";
 									$lcd_cmds[] = "widget_set $name runtime_wdgt 1 2 $lcdpanel_width 2 h 3 \"{$runtime}\"";
 									$lcd_cmds[] = "widget_set $name batt_wdgt 1 3 \"BATT: {$ups_status['battery.charge']}%\"";
 									$lcd_cmds[] = "widget_set $name load_wdgt 1 4 \"LOAD: {$ups_status['ups.load']}%\"";

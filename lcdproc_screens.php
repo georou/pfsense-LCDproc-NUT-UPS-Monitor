@@ -232,7 +232,7 @@ $section->addInput(
 		'Display UPS status', // checkbox text
 		$pconfig['scr_nut_ups'] // checkbox initial value
 	)
-)->setHelp('Current UPS Status, Runtime, Battery level and Load. Consider a slower LCD refresh frequency. Greater than 10 Seconds. NOTE: NUT packaged required');
+)->setHelp('Display current UPS Status, Runtime, Battery Level and Load. Battery voltage displayed if runtime is not available. Restart LCDproc service if changing values of NUT remote UPS monitoring. NOTE: NUT packaged required');
 
 $group = new Form_Group('CPU Temperature');
 
