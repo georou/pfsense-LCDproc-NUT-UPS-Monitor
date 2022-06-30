@@ -1281,7 +1281,7 @@ function loop_status($lcd) {
 							$runtime = ($ups_status['_hms'] == null) ? "VOLTS: {$ups_status['battery.voltage']}/{$ups_status['battery.voltage.low']}" : "{$ups_status['_hms']}";
 							switch($lcdpanel_height) {
 								case 1:
-									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']} HMS:{$runtime} BATT:{$ups_status['battery.charge']}% LOAD:{$ups_status['ups.load']}%\"";
+									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 2 \"{$ups_status['_summary']} HMS:{$runtime} BATT:{$ups_status['battery.charge']}% LOAD:{$ups_status['ups.load']}%\"";
 									break;
 								case 2:
 									$lcd_cmds[] = "widget_set $name summary_wdgt 1 1 $lcdpanel_width 2 h 3 \"{$ups_status['_summary']}\"";
