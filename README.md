@@ -1,3 +1,5 @@
+Consider this now archived. Only to be used for future reference.
+
 # pfSense LCDproc NUT UPS Monitor
 
 ![LCD example](LCD_1.jpg)
